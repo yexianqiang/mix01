@@ -1,7 +1,7 @@
 
 <template >
 	<div class="main-class">
-
+		<img src="../assets/logo.png">
 		<button @click="show = !show">
 		    Toggle render
 		</button>
@@ -23,6 +23,7 @@
 		<div><span>银行编号</span>{{count}} <span @click="newBankName">修改</span> <span @click="decrement" style="color: red">编号减少</span></div>
 		<div>{{ bankInf.name }}</div>
 		<p>{{ count1 }}</p>
+		<div @click='switchList'>跳转list页面</div>
 	</div>
 	
 </template>
@@ -55,6 +56,10 @@ export default {
   },
   methods: {
   	...mapActions(['decrement']),
+  	switchList() {
+  		console.log(this.$router)
+  		this.$router.push({ path: 'list' })
+  	},
   	sub() {
 
   		let _this = this

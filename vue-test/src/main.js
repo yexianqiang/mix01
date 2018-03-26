@@ -4,13 +4,21 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+import { Spinner } from 'mint-ui';
+
+Vue.component(Spinner.name, Spinner);
+import { Field } from 'mint-ui';
+
+Vue.component(Field.name, Field);
 
 import store from './store'
 
 
 import axios from 'axios';
 Vue.prototype.$http = axios;
-// console.log(Vuex)
+// console.log(MintUI)
 
 
 Vue.config.productionTip = false
@@ -20,6 +28,5 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')

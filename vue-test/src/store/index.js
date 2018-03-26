@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 // 告诉 vue “使用” vuex
-console.log(Vuex)
+// console.log(Vuex)
 
 Vue.use(Vuex)
 const actions = {
