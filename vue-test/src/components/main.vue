@@ -20,7 +20,7 @@
 		  <div class="bounce3"></div>
 		</div>
 		<p>{{bankName}}</p>
-		<div><span>银行编号</span>{{count}} <span @click="newBankName">修改</span> <span @click="decrement" style="color: red">编号减少</span></div>
+		<div><span>银行编号 </span>{{count}} <span @click="newBankName">修改</span> <span @click="decrement" style="color: red">编号减少</span></div>
 		<div>{{ bankInf.name }}</div>
 		<p>{{ count1 }}</p>
 		<div @click='switchList'>跳转list页面</div>
