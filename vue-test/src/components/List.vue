@@ -6,6 +6,14 @@
     <mt-spinner type="triple-bounce"></mt-spinner>
 	
 	<div id="main" ref='input1' style="width: 600px;height:400px;"></div>
+
+	<input type="text" v-model:value="childrens.name" />
+    <input type="text" v-model:value="lastName" /> {{lastName}}  
+
+    
+    <div>
+    	<router-link to="swiper">{{ fullName }}</router-link>
+    </div>
   </div>
 </template>
 
@@ -18,10 +26,28 @@ import echarts from 'echarts'
 
 
 export default {
+	
   name: 'list',
   data() {
   	return {
+  		childrens: {  
+            name: '以海',  
+            age: 20,  
+            sex: '男'  
+        },
+        lastName:"张saf",
+
+        firstName: 'Foo',
+    	lastName: 'Bar',
+        
   		msg: '',
+  		// watch: {
+  		// 	lastName: function(val){
+  		// 		console.log(val)
+  		// 	}
+	    	
+  		// },
+  		
   		// option: {
   		// 	title: {
 		  //       text: 'ECharts 入门示例'
@@ -92,7 +118,27 @@ export default {
 		}
   	}
   },
-
+  // watch: {
+  //   firstName: function (val) {
+  //     this.fullName = val + ' ' + this.lastName
+  //   },
+  //   lastName: function (val) {
+  //   	console.log(11)
+  //     this.fullName = this.firstName + ' ' + val
+  //   }
+  // },
+  // watch: {
+  // 	firstName: function(val,oldval){
+  // 		console.log(111)
+  // 	}
+  // },
+  computed: {
+  	fullName: function() {
+  		return this.firstName + ' ' + this.lastName
+  		console.log(111)
+  	}
+  },
+   
   mounted() {
   	// var xAxisData = [];
 	// var data1 = [];
@@ -104,7 +150,7 @@ export default {
 	}
   	// var myChart = echarts.init(document.getElementById('main'));
   	var input1 = echarts.init(this.$refs.input1)
-  	console.log(this.$refs.input1)
+  	// console.log(this.$refs.input1)
   	input1.setOption(this.option);
   	// myChart.setOption(option)
   },
@@ -122,12 +168,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

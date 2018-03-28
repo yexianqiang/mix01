@@ -6,12 +6,21 @@ import router from './router'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import { Spinner } from 'mint-ui';
+import {  Spinner } from 'mint-ui';
 
 Vue.component(Spinner.name, Spinner);
 import { Field } from 'mint-ui';
 
+//  轮播插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+
 Vue.component(Field.name, Field);
+
+
+// 下拉和上啦的插件
+import VueScroller from 'vue-scroller'
+Vue.use(VueScroller)
 
 import store from './store'
 
